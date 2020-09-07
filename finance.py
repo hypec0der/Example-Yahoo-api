@@ -1,5 +1,6 @@
 
-from json2xml.utils import readfromstring     # Download json2xml with pip3 
+
+from json2xml.utils import readfromstring
 from json2xml import json2xml
 from pandas import read_json
 import requests
@@ -13,7 +14,7 @@ yahoo_api_request = 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/{}/{}'
 
 class AuthAction(argparse.Action):
 
-    def __init__(self,option_strings,dest,help):
+    def __init__(self,option_strings,dest,help,default=None):
         # Come destinazione prendi la chiave query 
         super().__init__(option_strings,dest='auth',help=help, required=True, type=str)
         # Salva il nome della destinazione
@@ -82,7 +83,7 @@ def main():
     parser = argparse.ArgumentParser('Yahoo finance api query')
     # Crea un gruppo nel parser per i valori necessari per l'autenticazione
     auth = parser.add_argument_group('Auth')
-    auth.add_argument('--host',dest='x-rapidapi-host',action=AuthAction, help='Insert host to request')
+    auth.add_argument('--host',dest='x-rapidapi-host',action=AuthAction,default='apidojo-yahoo-finance-v1.p.rapidapi.com',help='Insert host to request')
     auth.add_argument('--key',dest='x-rapidapi-key',action=AuthAction,help='Insert key')    
     # Crea dei subparsers
     subparsers = parser.add_subparsers(dest='Database')
