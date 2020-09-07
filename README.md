@@ -1,6 +1,8 @@
-# Yahoo-api-finance
-Simple script to retrieve data from Yahoo finance 
+# Example-Yahoo-api
 
-Example of use:
+Some scripts to show how can yahoo-api be used by programmers to create some useful applications
 
-  python3 finance.py --host apidojo-yahoo-finance-v1.p.rapidapi.com --key "your-key-retrieved-by-account" --xml --region it market --summary > result.xml
+financy.py is a simple script that use yahoo-api-finance to query for all information about finance summary, stocks, quotes, movers, etc… as on official website.
+In order to use that is necessary a rapidapi account: visit https://rapidapi.com/apidojo/api/yahoo-finance1
+
+health.py is a simple script that use who (world health organisation) api to retrieve last data about deseases ...
